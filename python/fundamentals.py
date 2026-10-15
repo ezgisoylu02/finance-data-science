@@ -1,3 +1,5 @@
+import numpy as np
+
 # Python fundamentals practice
 # Practicing dictionaries, functions, and conditional statements
 # using simple financial examples.
@@ -25,4 +27,31 @@ def analyze_stock(stock):
   print(stock_1["ticker"], analyze_stock(stock_1))
   print(stock_2["ticker"], analyze_stock(stock_2))
   
-  
+
+# Return analysis
+returns = np.array([1.5,-0.7,2.3,-1.1,0.9])
+average_return = np.mean(returns)
+print(average_return)
+
+volatility = np.std(returns)
+print(volatility)
+
+def analyze_returns(returns):
+  average_return = np.mean(returns)
+  volatility = np.std(returns)
+  return average_retun, volatility
+
+avg, vol = analyze_returns(returns)
+print("Average Return:", avg)
+print("Volatility:", vol)
+
+def classify_volatility(vol):
+  if vol < 1:
+    return("Low volatility")
+  elif vol <= 2:
+    return("Moderate volatility")
+  else:
+    return("High volatility")
+
+risk_level = classify_volatility(vol)
+print("Risk Level:", risk_level)
